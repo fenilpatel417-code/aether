@@ -1,0 +1,5 @@
+/* Clean reset file. All global styling is in theme.css and layout.css */
+body {
+  margin: 0;
+  padding: 0;
+}

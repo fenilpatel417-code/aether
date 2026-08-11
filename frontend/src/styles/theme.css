@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Futuristic Color System - Cyber & Deep Space */
+  --bg-primary: #030712;
+  --bg-secondary: rgba(17, 24, 39, 0.7);
+  --bg-tertiary: rgba(31, 41, 55, 0.5);
+  
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  
+  --color-brand: #6366f1; /* Neon Indigo */
+  --color-brand-hover: #818cf8;
+  --color-brand-light: rgba(99, 102, 241, 0.15);
+  --color-brand-glow: rgba(99, 102, 241, 0.35);
+  
+  /* Status Glow Colors */
+  --color-success: #10b981; /* Emerald Neon */
+  --color-success-light: rgba(16, 185, 129, 0.1);
+  --color-success-glow: rgba(16, 185, 129, 0.3);
+  
+  --color-warning: #fbbf24; /* Amber Neon */
+  --color-warning-light: rgba(251, 191, 36, 0.1);
+  --color-warning-glow: rgba(251, 191, 36, 0.3);
+  
+  --color-danger: #f43f5e; /* Rose Neon */
+  --color-danger-light: rgba(244, 63, 94, 0.1);
+  --color-danger-glow: rgba(244, 63, 94, 0.3);
+  
+  --color-info: #06b6d4; /* Cyan Neon */
+  --color-info-light: rgba(6, 182, 212, 0.1);
+  --color-info-glow: rgba(6, 182, 212, 0.3);
+
+  /* Role Neon Highlights */
+  --role-admin: #c084fc; /* Purple */
+  --role-sales: #f472b6; /* Pink */
+  --role-warehouse: #fb923c; /* Orange */
+  --role-accounts: #22d3ee; /* Cyan */
+
+  /* Radius & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* 3D and Glossy Shadows */
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.08) inset;
+  
+  /* Glowing Shadows for 3D Cards */
+  --glow-brand: 0 0 15px var(--color-brand-glow), 0 8px 30px rgba(0, 0, 0, 0.5);
+  --glow-success: 0 0 15px var(--color-success-glow), 0 8px 30px rgba(0, 0, 0, 0.5);
+  --glow-warning: 0 0 15px var(--color-warning-glow), 0 8px 30px rgba(0, 0, 0, 0.5);
+  --glow-danger: 0 0 15px var(--color-danger-glow), 0 8px 30px rgba(0, 0, 0, 0.5);
+  --glow-info: 0 0 15px var(--color-info-glow), 0 8px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-style: 1px solid var(--border-color);
+
+  --glass-bg-sidebar: rgba(15, 23, 42, 0.45);
+  --glass-bg-card: rgba(17, 24, 39, 0.45);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+
+  --input-bg: rgba(0, 0, 0, 0.25);
+  --table-header-bg: rgba(255, 255, 255, 0.02);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.03);
+  --timeline-content-bg: rgba(255, 255, 255, 0.015);
+}
+
+[data-theme="light"] {
+  /* Light Futuristic theme - Neon Glass */
+  --bg-primary: #f3f4f6;
+  --bg-secondary: rgba(255, 255, 255, 0.75);
+  --bg-tertiary: rgba(243, 244, 246, 0.85);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  
+  --color-brand-light: rgba(99, 102, 241, 0.08);
+  --color-brand-glow: rgba(99, 102, 241, 0.15);
+  
+  --color-success-light: rgba(16, 185, 129, 0.08);
+  --color-warning-light: rgba(251, 191, 36, 0.08);
+  --color-danger-light: rgba(244, 63, 94, 0.08);
+  --color-info-light: rgba(6, 182, 212, 0.08);
+  
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-style: 1px solid var(--border-color);
+  
+  --shadow-md: 0 8px 30px rgba(31, 41, 55, 0.06), 0 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  --shadow-lg: 0 16px 40px rgba(31, 41, 55, 0.1), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+
+  --glass-bg-sidebar: rgba(255, 255, 255, 0.75);
+  --glass-bg-card: rgba(255, 255, 255, 0.82);
+  --glass-border-hover: rgba(99, 102, 241, 0.25);
+
+  --input-bg: #ffffff;
+  --table-header-bg: rgba(0, 0, 0, 0.03);
+  --btn-secondary-bg: #ffffff;
+  --timeline-content-bg: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating Abstract Aurora Lights in background */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+  animation: floatLight 12s infinite alternate ease-in-out;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 35vw;
+  height: 35vw;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+  animation: floatLight2 15s infinite alternate ease-in-out;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+/* Animations */
+@keyframes floatLight {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 15%) scale(1.1); }
+}
+
+@keyframes floatLight2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-10%, -15%) scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardPop {
+  0% { transform: scale(0.97) translateY(5px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-pop {
+  animation: cardPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom view transition circular wipe properties */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+[data-theme="dark"]::view-transition-old(root) {
+  z-index: 9999;
+}
+
+[data-theme="dark"]::view-transition-new(root) {
+  z-index: 1;
+}
+
