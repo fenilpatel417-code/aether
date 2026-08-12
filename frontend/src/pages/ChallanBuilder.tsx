@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { ArrowLeft, Plus, Trash2, Save, FileCheck2, Info, AlertTriangle } from 'lucide-react';
 import { useToast } from '../context/ToastContext';
+import { API_BASE_URL } from '../config';
 
 interface Customer {
   id: string;
@@ -52,10 +53,10 @@ const ChallanBuilder: React.FC = () => {
     const fetchData = async () => {
       try {
         const [custRes, prodRes] = await Promise.all([
-          fetch('http://localhost:5000/api/customers?limit=100', {
+          fetch(`${API_BASE_URL}/api/customers?limit=100`, {
             headers: { 'Authorization': `Bearer ${token}` }
           }),
-          fetch('http://localhost:5000/api/products?limit=100', {
+          fetch(`${API_BASE_URL}/api/products?limit=100`, {
             headers: { 'Authorization': `Bearer ${token}` }
           })
         ]);
@@ -155,7 +156,7 @@ const ChallanBuilder: React.FC = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/challans', {
+      const response = await fetch(`${API_BASE_URL}/api/challans`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

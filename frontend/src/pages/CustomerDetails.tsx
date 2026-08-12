@@ -14,6 +14,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { useToast } from '../context/ToastContext';
+import { API_BASE_URL } from '../config';
 
 interface CustomerNote {
   id: string;
@@ -56,7 +57,7 @@ const CustomerDetails: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:5000/api/customers/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/customers/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -83,7 +84,7 @@ const CustomerDetails: React.FC = () => {
     setNoteError(null);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/customers/${id}/notes`, {
+      const response = await fetch(`${API_BASE_URL}/api/customers/${id}/notes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

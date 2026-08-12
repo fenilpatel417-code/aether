@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { Search, Plus, Edit, Eye, X, Mail, Phone, Building2, Landmark, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useToast } from '../context/ToastContext';
+import { API_BASE_URL } from '../config';
 
 interface Customer {
   id: string;
@@ -65,7 +66,7 @@ const CRM: React.FC = () => {
         page: page.toString(),
         limit: '8',
       });
-      const response = await fetch(`http://localhost:5000/api/customers?${queryParams}`, {
+      const response = await fetch(`${API_BASE_URL}/api/customers?${queryParams}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -140,8 +141,8 @@ const CRM: React.FC = () => {
 
     try {
       const url = editingCustomer 
-        ? `http://localhost:5000/api/customers/${editingCustomer.id}`
-        : 'http://localhost:5000/api/customers';
+        ? `${API_BASE_URL}/api/customers/${editingCustomer.id}`
+        : `${API_BASE_URL}/api/customers`;
       const method = editingCustomer ? 'PUT' : 'POST';
 
       const response = await fetch(url, {

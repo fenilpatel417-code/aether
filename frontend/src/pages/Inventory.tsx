@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Search, Plus, Edit, AlertTriangle, History, X, HelpCircle } from 'lucide-react';
 import { useToast } from '../context/ToastContext';
+import { API_BASE_URL } from '../config';
 
 interface Product {
   id: string;
@@ -71,7 +72,7 @@ const Inventory: React.FC = () => {
         page: page.toString(),
         limit: '8',
       });
-      const response = await fetch(`http://localhost:5000/api/products?${queryParams}`, {
+      const response = await fetch(`${API_BASE_URL}/api/products?${queryParams}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -96,7 +97,7 @@ const Inventory: React.FC = () => {
     setSelectedProductLogs(product);
     setLoadingLogs(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${product.id}/logs`, {
+      const response = await fetch(`${API_BASE_URL}/api/products/${product.id}/logs`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -163,8 +164,8 @@ const Inventory: React.FC = () => {
 
     try {
       const url = editingProduct 
-        ? `http://localhost:5000/api/products/${editingProduct.id}`
-        : 'http://localhost:5000/api/products';
+        ? `${API_BASE_URL}/api/products/${editingProduct.id}`
+        : `${API_BASE_URL}/api/products`;
       const method = editingProduct ? 'PUT' : 'POST';
 
       const response = await fetch(url, {

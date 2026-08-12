@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { Search, Plus, FileText, Download, X, AlertCircle, Trash2, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import jsPDF from 'jspdf';
+import { API_BASE_URL } from '../config';
 
 interface Challan {
   id: string;
@@ -75,7 +76,7 @@ const Challans: React.FC = () => {
         page: page.toString(),
         limit: '8',
       });
-      const response = await fetch(`http://localhost:5000/api/challans?${queryParams}`, {
+      const response = await fetch(`${API_BASE_URL}/api/challans?${queryParams}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -100,7 +101,7 @@ const Challans: React.FC = () => {
     setLoadingDetails(true);
     setTransitionError(null);
     try {
-      const response = await fetch(`http://localhost:5000/api/challans/${challan.id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/challans/${challan.id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -127,7 +128,7 @@ const Challans: React.FC = () => {
     setTransitioning(true);
     setTransitionError(null);
     try {
-      const response = await fetch(`http://localhost:5000/api/challans/${selectedChallan.id}/status`, {
+      const response = await fetch(`${API_BASE_URL}/api/challans/${selectedChallan.id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

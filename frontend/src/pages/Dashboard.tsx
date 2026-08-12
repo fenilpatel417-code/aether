@@ -12,6 +12,7 @@ import {
   ClipboardList
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 interface DashboardData {
   kpis: {
@@ -74,7 +75,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/dashboard/stats', {
+        const response = await fetch(`${API_BASE_URL}/api/dashboard/stats`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (!response.ok) {
